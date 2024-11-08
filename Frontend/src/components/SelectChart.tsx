@@ -11,6 +11,15 @@ export default function SelectAutoWidth() {
         setChart(event.target.value);
     };
 
+    const menuToSelect = [
+        "Pie Chart",
+        "Bar Chart",
+        "Line Graph",
+        "Scatter Plot",
+        "Stacked Bar Chart",
+        "Heat Map"
+    ]
+
     return (
         <div>
             <FormControl sx={{ m: 1, width: 200, height: 50 }}>
@@ -26,15 +35,20 @@ export default function SelectAutoWidth() {
                     <MenuItem value={"Default"}>
                         <em>Default</em>
                     </MenuItem>
-                    <MenuItem value={"Pie Chart"}> Pie Chart</MenuItem>
+                    {menuToSelect.map((menu, index) => {
+                        return <MenuItem
+                        key={index}
+                        value = {menu}>
+                            {menu}
+                        </MenuItem>
+
+                    })}
+                    {/* <MenuItem value={"Pie Chart"}> Pie Chart</MenuItem>
                     <MenuItem value={"Bar Chart"}>Bar Chart</MenuItem>
-                    <MenuItem value={"Donut Chart"}>Donut Chart</MenuItem>
                     <MenuItem value={"Line Graph"}>Line Graph</MenuItem>
-                    <MenuItem value={"Area Graph"}>Area Graph</MenuItem>
                     <MenuItem value={"Scatter Plot"}>Scatter Plot</MenuItem>
-                    <MenuItem value={"Sparkline"}>Sparkline</MenuItem>
-                    <MenuItem value={"Gauge Chart"}>Gauge Chart</MenuItem>
-                    <MenuItem value={"Heat Map"}>Heat Map</MenuItem>
+                    <MenuItem value={"Stacked Bar Chart"}>Gauge Chart</MenuItem>
+                    <MenuItem value={"Heat Map"}>Heat Map</MenuItem> */}
                 </Select>
             </FormControl>
         </div>

@@ -2,6 +2,8 @@ import { HeatmapValueType }  from '@mui/x-charts-pro/models';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { Heatmap } from '@mui/x-charts-pro/Heatmap';
+import SelectAutoWidth from '../SelectChart';
+import Item from '../Item';
 
 
 const data: HeatmapValueType[] = [
@@ -28,8 +30,9 @@ const data: HeatmapValueType[] = [
 ];
 
 export default function HighlightHeatmap() {
-    return (
-        <Box sx={{ width: '100%', maxWidth: 400 }}>
+    return <Item>
+        <SelectAutoWidth />
+        <Box sx={{ width: '100%', maxWidth: 400, height: 400}}>
             <Heatmap
                 xAxis={[{ data: [1, 2, 3, 4] }]}
                 yAxis={[{ data: ['A', 'B', 'C', 'D', 'E'] }]}
@@ -38,5 +41,5 @@ export default function HighlightHeatmap() {
                 height={400}
             />
         </Box>
-    );
+    </Item>
 }

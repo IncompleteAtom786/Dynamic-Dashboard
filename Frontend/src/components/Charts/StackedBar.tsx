@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
+import SelectAutoWidth from '../SelectChart';
+import Item from '../Item';
 
 const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
 const pData = [2400, 1398, 9800, 3908, 4800, 3800, 4300];
@@ -14,15 +16,16 @@ const xLabels = [
 ];
 
 export default function StackedBarChart() {
-    return (
+    return <Item>
+        <SelectAutoWidth />
         <BarChart
             width={400}
-            height={300}
+            height={400}
             series={[
                 { data: pData, label: 'pv', id: 'pvId', stack: 'total' },
                 { data: uData, label: 'uv', id: 'uvId', stack: 'total' },
             ]}
             xAxis={[{ data: xLabels, scaleType: 'band' }]}
         />
-    );
+    </Item>
 }

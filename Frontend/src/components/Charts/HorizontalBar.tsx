@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
+import Item from '../Item';
+import SelectAutoWidth from '../SelectChart';
 
 const dataset = [
     {
@@ -99,12 +101,13 @@ const chartSetting = {
             label: 'rainfall (mm)',
         },
     ],
-    width: 550,
-    height: 300,
+    width: 500,
+    height: 400,
 };
 
 export default function HorizontalBars() {
-    return (
+    return <Item>
+        <SelectAutoWidth />
         <BarChart
             dataset={dataset}
             yAxis={[{ scaleType: 'band', dataKey: 'month' }]}
@@ -112,5 +115,5 @@ export default function HorizontalBars() {
             layout="horizontal"
             {...chartSetting}
         />
-    );
+    </Item>
 }

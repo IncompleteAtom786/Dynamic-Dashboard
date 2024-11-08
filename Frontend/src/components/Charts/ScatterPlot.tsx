@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { ScatterChart } from '@mui/x-charts/ScatterChart';
 import { axisClasses } from '@mui/x-charts/ChartsAxis';
+import Item from '../Item';
+import SelectAutoWidth from '../SelectChart';
 
 const dataset = [
     {
@@ -83,22 +85,23 @@ const chartSetting = {
     ],
     sx: {
         [`.${axisClasses.left} .${axisClasses.label}`]: {
-            transform: 'translate(-20px, 0)',
+            transform: 'translate(-10px, 0)',
         },
     },
-    width: 450,
-    height: 300,
+    width: 500,
+    height: 400,
 };
 
-export default function ScatterPlot() {
-    return (
-        <ScatterChart
-            dataset={dataset}
-            series={[
-                { datasetKeys: { id: 'version', x: 'a1', y: 'a2' }, label: 'Series A' },
-                { datasetKeys: { id: 'version', x: 'b1', y: 'b2' }, label: 'Series B' },
-            ]}
-            {...chartSetting}
-        />
-    );
+export default function ScatterDataset() {
+    return <Item>
+        <SelectAutoWidth />
+            <ScatterChart
+                dataset={dataset}
+                series={[
+                    { datasetKeys: { id: 'version', x: 'a1', y: 'a2' }, label: 'Series A' },
+                    { datasetKeys: { id: 'version', x: 'b1', y: 'b2' }, label: 'Series B' },
+                ]}
+                {...chartSetting}
+            />
+        </Item>
 }
