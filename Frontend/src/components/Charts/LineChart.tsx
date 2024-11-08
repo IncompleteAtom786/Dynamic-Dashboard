@@ -21,7 +21,8 @@ const xLabels = [
 
 export default function DashedLineChart() {
     return <Item>
-        <SelectAutoWidth />
+        <SelectAutoWidth
+        />
         <LineChart
             width={500}
             height={400}

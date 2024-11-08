@@ -94,7 +94,8 @@ const chartSetting = {
 
 export default function ScatterDataset() {
     return <Item>
-        <SelectAutoWidth />
+        <SelectAutoWidth
+        />
             <ScatterChart
                 dataset={dataset}
                 series={[

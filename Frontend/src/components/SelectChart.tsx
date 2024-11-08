@@ -5,7 +5,8 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useState } from 'react';
 
 export default function SelectAutoWidth() {
-    const [chart, setChart] = useState('Defualt');
+
+    const [chart, setChart] = useState('');
 
     const handleChange = (event: SelectChangeEvent) => {
         setChart(event.target.value);
@@ -22,7 +23,7 @@ export default function SelectAutoWidth() {
 
     return (
         <div>
-            <FormControl sx={{ m: 1, width: 200, height: 50 }}>
+            <FormControl sx={{ m: 1, width: 250, height: 50 }}>
                 <InputLabel>Charts</InputLabel>
                 <Select
                     labelId="demo-simple-select-autowidth-label"
@@ -43,12 +44,6 @@ export default function SelectAutoWidth() {
                         </MenuItem>
 
                     })}
-                    {/* <MenuItem value={"Pie Chart"}> Pie Chart</MenuItem>
-                    <MenuItem value={"Bar Chart"}>Bar Chart</MenuItem>
-                    <MenuItem value={"Line Graph"}>Line Graph</MenuItem>
-                    <MenuItem value={"Scatter Plot"}>Scatter Plot</MenuItem>
-                    <MenuItem value={"Stacked Bar Chart"}>Gauge Chart</MenuItem>
-                    <MenuItem value={"Heat Map"}>Heat Map</MenuItem> */}
                 </Select>
             </FormControl>
         </div>
