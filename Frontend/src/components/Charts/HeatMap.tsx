@@ -1,8 +1,10 @@
+import { HeatmapValueType }  from '@mui/x-charts-pro/models';
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import { Heatmap } from '@mui/x-charts-pro/Heatmap';
 
 
-const data = [
+const data: HeatmapValueType[] = [
     [0, 0, 10],
     [0, 1, 20],
     [0, 2, 40],
@@ -25,3 +27,16 @@ const data = [
     [3, 4, 90],
 ];
 
+export default function HighlightHeatmap() {
+    return (
+        <Box sx={{ width: '100%', maxWidth: 400 }}>
+            <Heatmap
+                xAxis={[{ data: [1, 2, 3, 4] }]}
+                yAxis={[{ data: ['A', 'B', 'C', 'D', 'E'] }]}
+                series={[{ data, highlightScope: { highlight: 'item', fade: 'global' } }]}
+                margin={{ top: 5, right: 5, left: 20 }}
+                height={400}
+            />
+        </Box>
+    );
+}

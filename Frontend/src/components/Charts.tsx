@@ -6,6 +6,9 @@ import StackedBarChart from "./Charts/StackedBar";
 import TwoLevelPieChart from "./Charts/TwoLevelPieChart";
 import PieChartWithCenterLabel from "./Charts/TwoLevelPieChart";
 import HorizontalBars from "./Charts/HorizontalBar";
+import BasicSparkLine from "./Charts/HeatMap";
+import BasicHeatmap from "./Charts/HeatMap";
+import HighlightHeatmap from "./Charts/HeatMap";
 
 export default function Charts() {
     return <Box sx={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyItems: "center", alignItems: "center", width: "100", padding: 1}}>
@@ -30,7 +33,7 @@ export default function Charts() {
         </Item>
 
         <Item sx={{ border: "3px solid grey", margin: 2 }}>
-            {/* <BasicGauges /> */}
+            <HighlightHeatmap />
         </Item>
 
     </Box>
